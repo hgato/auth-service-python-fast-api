@@ -2,6 +2,7 @@ from sqlmodel import Session, select
 
 from src.db import engine
 from src.models import Permission
+from src.constants import DEFAULT_PERMISSIONS
 
 
 def seed_permissions(names: list[str]):
@@ -16,4 +17,4 @@ def seed_permissions(names: list[str]):
         session.commit()
 
 def migrate_db():
-    seed_permissions(["admin",])
+    seed_permissions(DEFAULT_PERMISSIONS)

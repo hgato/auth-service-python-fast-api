@@ -1,0 +1,18 @@
+# Permission Configuration
+# Copy this file to permissions.yaml and customize for your project
+
+# All available permissions that should be seeded in the database
+default_permissions:
+  - admin
+  - user
+  - moderator
+
+# Permissions automatically assigned to newly registered users
+default_user_permissions:
+  - user
+
+# Optional: Permission descriptions (for documentation)
+permission_descriptions:
+  admin: "Full system access with all privileges"
+  user: "Standard user access"
+  moderator: "Moderate content and manage users"

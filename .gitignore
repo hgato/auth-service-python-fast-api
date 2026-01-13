@@ -15,6 +15,7 @@ __pycache__/
 .DS_Store
 
 .env
+permissions.yaml
 
 poetry.lock
 

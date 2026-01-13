@@ -7,7 +7,6 @@ from src import models, schemas, utils
 
 from src.db import init_db
 from src.db_utils import create_base_user
-from src.migrations import migrate_db
 
 from src.schemas import UserOut
 
@@ -19,7 +18,6 @@ async def lifespan(app: FastAPI):
     db = next(get_session())
     db.commit()
     init_db()
-    migrate_db()
     yield
     print("Application is shutting down (lifespan)!")
 
