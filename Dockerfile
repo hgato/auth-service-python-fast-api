@@ -12,6 +12,10 @@ RUN poetry config virtualenvs.create false \
 # Copy source code
 COPY src /app/src
 
+COPY manage.py /app/
+COPY permissions.yaml.example /app/
+COPY permissions.yaml /app/permissions.yaml
+
 ENV PYTHONUNBUFFERED=1
 
 EXPOSE 8000

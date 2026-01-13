@@ -24,7 +24,7 @@ async def lifespan(app: FastAPI):
 app = FastAPI(title="Auth Service with JWT + Permissions", lifespan=lifespan)
 
 
-@app.put("/register", response_model=schemas.UserOut)
+@app.post("/register", response_model=schemas.UserOut)
 def register_user(user_input: schemas.UserCreate, db: Session = Depends(get_session)):
     if db.query(models.User).filter(models.User.email == user_input.email).first():
         raise HTTPException(status_code=400, detail="Username already taken")
