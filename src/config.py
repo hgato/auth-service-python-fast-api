@@ -14,6 +14,7 @@ class Settings(BaseSettings):
     POSTGRES_DB: str = os.getenv('POSTGRES_DB')
     POSTGRES_HOST: str = os.getenv('POSTGRES_HOST')
     POSTGRES_PORT: str = os.getenv('POSTGRES_PORT')
+    ISSUER_NAME: str = os.getenv('ISSUER_NAME')
 
 
 settings = Settings()
