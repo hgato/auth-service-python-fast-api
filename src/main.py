@@ -61,7 +61,7 @@ def refresh_token(token: schemas.AccessTokenRefreshRequest):
     if not decoded:
         raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail="Invalid refresh token")
     access_token = utils.create_access_token(decoded)
-    return {"access_token": access_token, "refresh_token": refresh_token, "token_type": "bearer"}
+    return {"access_token": access_token, "token_type": "bearer"}
 
 
 @app.get("/verify", response_model=schemas.UserOut)
